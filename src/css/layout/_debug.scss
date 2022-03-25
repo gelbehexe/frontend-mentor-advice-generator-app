@@ -1,0 +1,26 @@
+@use "../abstract/mixins" as *;
+
+body {
+    background-image: url("../../../incoming/design/mobile-design.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+
+    @include media-breakpoint-min {
+        background-image: url("../../../incoming/design/desktop-design.jpg");
+    }
+}
+
+.box {
+    height: 315px;
+    background-color: rgb(255 0 0 / 50%);
+
+    @include media-breakpoint-min {
+        height: 333px;
+    }
+
+    opacity: 0.5;
+
+    > * > * {
+        // display: none;
+    }
+}

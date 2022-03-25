@@ -1,0 +1,32 @@
+{
+    "semi": false,
+    "singleQuote": false,
+    "jsxSingleQuote": false,
+    "quoteProps": "consistent",
+    "overrides": [
+        {
+            "files": ".prettierc",
+            "options": {
+                "parser": "json5"
+            }
+        },
+        {
+            "files": "*.js",
+            "options": {
+                "parser": "flow"
+            }
+        },
+        {
+            "files": "*.ejs",
+            "options": {
+                "parser": "html"
+            }
+        },
+        {
+            "files": "*.scss",
+            "options": {
+                "parser": "scss"
+            }
+        }
+    ]
+}

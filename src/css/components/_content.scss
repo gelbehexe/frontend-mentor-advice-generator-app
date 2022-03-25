@@ -1,0 +1,110 @@
+@use "../abstract/mixins" as *;
+
+.content {
+    --_animation-duration: 500ms;
+    --_animation-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+
+    text-align: center;
+    margin-block-start: var(--content-margin-block-start);
+    margin-block-end: var(--content-margin-block-end);
+    margin-inline: 1.5rem;
+    position: relative;
+    min-height: 4rem;
+    transform: scale(1);
+    opacity: 1;
+
+    &__decoration {
+        max-width: 100%;
+        height: auto;
+        speak: never;
+
+        &::after {
+            content: var(--content-divider-content);
+            display: block;
+            margin-block-start: var(--content-divider-margin-block-start);
+            max-width: 100%;
+            height: auto;
+            object-fit: scale-down;
+        }
+    }
+
+    &:is(.error), &:is(.uninitialized) {
+        width: auto;
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    &__title {
+        margin: 0;
+        color: var(--clr-title-text);
+        text-transform: uppercase;
+        font-size: var(--content-title-font-size);
+        max-width: 100%;
+        overflow-x: hidden;
+
+        &__text {
+            letter-spacing: 0.225rem;
+            display: inline-block;
+            transform-origin: center;
+        }
+    }
+
+    &__body {
+        margin-block-start: var(--content-body-margin-block-start);
+        line-height: var(--content-body-line-height);
+        max-width: 100%;
+        overflow-x: hidden;
+
+        &__text {
+            display: inline-block;
+            transform: var(--content-body-text-transform);
+
+            &::before {
+                content: open-quote;
+            }
+
+            &::after {
+                content: close-quote;
+            }
+        }
+
+    }
+
+    &.phase-in {
+        transition: height var(--_animation-duration) var(--_animation-timing-function);
+        animation: scale-in var(--_animation-duration) var(--_animation-timing-function) forwards;
+    }
+
+    &.phase-out {
+        transition: height var(--_animation-duration) var(--_animation-timing-function);
+        animation: scale-out var(--_animation-duration) var(--_animation-timing-function) forwards;
+    }
+
+    &--shadow {
+        position: absolute;
+        inset: 0 0 auto 0;
+        visibility: hidden;
+        pointer-events: none;
+        speak: never;
+    }
+
+}
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes scale-out {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}

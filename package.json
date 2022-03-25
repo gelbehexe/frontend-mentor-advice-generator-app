@@ -1,0 +1,82 @@
+{
+    "name": "frontend-mentor-advice-generator-app",
+    "version": "1.0.0",
+    "description": "Frontend Mentor | Advice generator app",
+    "private": "true",
+    "scripts": {
+        "lint:eslint": "eslint .",
+        "lint:stylelint": "stylelint .",
+        "lint": "npm run lint:eslint && npm run lint:stylelint",
+        "dev:watch": "webpack --mode development --watch",
+        "dev:serve": "webpack serve --mode development",
+        "dev:analyze": "webpack --mode development --env OPEN_ANALYZE=1",
+        "dev": "webpack --mode development",
+        "build:webpack": "webpack --mode production",
+        "build:public": "copyup \"./public/**/*\" \"./dist/.\"",
+        "build": "npm run build:webpack && npm run build:public",
+        "build:analyze": "npm run build:webpack -- --env OPEN_ANALYZE=1 && npm run build:public",
+        "preview": "serve"
+    },
+    "browser": {
+        "fs": false,
+        "path": false
+    },
+    "keywords": [],
+    "author": {
+        "name": "Deborah White",
+        "email": "deborah.white1503@icloud.com",
+        "url": "https://codepen.io/collection/VYvGBb"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/gelbehexe/frontend-mentor-advice-generator-app"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "@babel/core": "^7.17.8",
+        "@babel/preset-env": "^7.16.11",
+        "@babel/runtime": "^7.17.8",
+        "@fontsource/manrope": "^4.5.4",
+        "@namics/stylelint-bem": "^7.0.0",
+        "@vue/eslint-config-prettier": "^7.0.0",
+        "babel-loader": "^8.2.3",
+        "babel-plugin-transform-runtime": "^6.23.0",
+        "copyfiles": "^2.4.1",
+        "css-loader": "^6.7.1",
+        "dotenv": "^16.0.0",
+        "eslint": "^8.10.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-prettier-vue": "^3.1.0",
+        "eslint-plugin-vue": "^8.5.0",
+        "eslint-webpack-plugin": "^3.1.1",
+        "html-webpack-plugin": "^5.5.0",
+        "mini-css-extract-plugin": "^2.6.0",
+        "postcss": "^8.4.8",
+        "postcss-loader": "^6.2.1",
+        "postcss-preset-env": "^7.4.2",
+        "prettier": "^2.5.1",
+        "regenerator-runtime": "^0.13.9",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.49.9",
+        "sass-loader": "^12.6.0",
+        "serve": "^13.0.2",
+        "strftime": "^0.10.1",
+        "style-loader": "^3.3.1",
+        "stylelint": "^14.5.3",
+        "stylelint-config-prettier": "^9.0.3",
+        "stylelint-config-prettier-scss": "^0.0.1",
+        "stylelint-config-standard-scss": "^3.0.0",
+        "vue": "^3.2.31",
+        "vue-loader": "^17.0.0",
+        "vue-style-loader": "^4.1.3",
+        "vue-template-compiler": "^2.6.14",
+        "webpack": "^5.70.0",
+        "webpack-bundle-analyzer": "^4.5.0",
+        "webpack-cli": "^4.9.2",
+        "webpack-dev-server": "^4.7.4"
+    },
+    "dependencies": {
+        "@faker-js/faker": "^6.0.0"
+    }
+}

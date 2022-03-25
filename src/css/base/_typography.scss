@@ -1,0 +1,33 @@
+@use "../abstract/variables" as *;
+@use "../abstract/mixins" as *;
+@use "~@fontsource/manrope/scss/mixins" as Manrope;
+
+// using variable font since the default has issues
+// @see: https://github.com/google/fonts/issues/2643
+@include Manrope.fontFaceVariableCustom($fontName: "Manrope");
+
+html, body {
+    font-family: Manrope, monospace, sans-serif;
+}
+
+html {
+    font-size: var(--font-size-base);
+}
+
+body {
+    font-size: var(--font-size-default);
+    font-weight: var(--font-weight-normal);
+}
+
+a[href] {
+    color: inherit;
+    text-decoration: underline;
+
+    &:hover, &:active {
+        opacity: 0.7;
+    }
+}
+
+.sr-only {
+    @include visually-hidden;
+}

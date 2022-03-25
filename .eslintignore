@@ -1,0 +1,5 @@
+dist
+public
+tmp
+.env*
+!.env.example

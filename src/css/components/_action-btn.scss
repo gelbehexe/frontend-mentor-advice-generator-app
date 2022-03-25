@@ -1,0 +1,52 @@
+@use "../abstract/mixins" as *;
+
+.action-btn {
+    --_size: var(--action-btn-size);
+    --_radius-negative: calc(var(--_size) / -2);
+    --_active-effect-duration: 200ms;
+
+    background-color: var(--clr-dice-bg);
+    border: none;
+    width: var(--_size);
+    height: var(--_size);
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    position: absolute;
+    bottom: var(--_radius-negative);
+    left: calc(50% + var(--_radius-negative));
+    cursor: pointer;
+    transition: opacity var(--_active-effect-duration) ease-in-out;
+
+    &:not([disabled]) {
+        @include active-styles {
+            transition: box-shadow var(--_active-effect-duration) ease-out;
+            box-shadow: 0 0 1rem var(--clr-dice-bg);
+        }
+    }
+
+    @at-root &:not([disabled]) &__dice {
+        animation: none;
+    }
+
+    &:is([disabled]) {
+        opacity: 0.5;
+        cursor: default;
+    }
+
+    @at-root &:is([disabled]) &__dice {
+        animation: dice-animation 600ms linear infinite;
+        animation-fill-mode: both;
+        animation-delay: var(--_active-effect-duration);
+    }
+}
+
+@keyframes dice-animation {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

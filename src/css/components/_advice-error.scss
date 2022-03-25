@@ -1,0 +1,17 @@
+.advice-error {
+    position: absolute;
+    inset: 1rem 2rem;
+    display: grid;
+    align-items: center;
+
+    & > div {
+        background-color: #cd9f9f;
+        border: 1px solid #713636;
+        color: #713636;
+        font-size: 1rem;
+        padding: 1rem;
+        margin-inline: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 16px rgb(0 0 0 / 25%);
+    }
+}

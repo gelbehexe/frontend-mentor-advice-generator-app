@@ -1,0 +1,10 @@
+.box {
+    background-color: var(--clr-inner-bg);
+    margin-block-end: var(--box-margin-block-end);
+    margin-inline: auto;
+    border-radius: var(--box-border-radius);
+    position: relative;
+    max-width: var(--box-max-width);
+    min-width: var(--box-min-width);
+
+}

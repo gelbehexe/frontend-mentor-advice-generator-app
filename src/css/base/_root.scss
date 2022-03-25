@@ -1,0 +1,76 @@
+@use "../abstract/variables" as *;
+@use "../abstract/functions" as *;
+@use "../abstract/mixins" as *;
+
+:root {
+    // animation
+    --transition-transform-duration: 600ms;
+    --transition-opacity-duration: 200ms;
+
+    // fonts
+    --font-size-base: 16px;
+    --font-size-default: 1.5rem;
+    --font-weight-normal: 800;
+
+    // colors (base)
+    --clr-primary-1: hsl(193deg 38% 86%);
+    --clr-primary-2: hsl(150deg 100% 66%);
+    --clr-neutral-1: hsl(217deg 19% 38%);
+    --clr-neutral-2: hsl(217deg 19% 24%);
+    --clr-neutral-3: hsl(218deg 23% 16%);
+
+    // extra for attribution
+    --clr-neutral-3-opacity: hsl(218deg 23% 16% / 70%);
+
+    // colors (concrete)
+    --clr-outer-bg: var(--clr-neutral-3);
+    --clr-inner-bg: var(--clr-neutral-2);
+    --clr-dice-bg: var(--clr-primary-2);
+    --clr-title-text: var(--clr-primary-2);
+    --clr-body-text: var(--clr-primary-1);
+    --clr-line: var(--clr-primary-1);
+    --clr-attribution-bg: var(--clr-neutral-3-opacity);
+    --clr-attribution-fg: hsl(0deg 0% 100% / 80%);
+
+    // box
+    --box-border-radius: 0.625rem;
+    --box-margin-block-end: 17vh;
+    --box-default-width-mobile: 92%;
+    --box-default-width-desktop: 540px;
+    --box-max-width: min(var(--box-default-width-desktop), var(--box-default-width-mobile));
+    --box-min-width: var(--box-default-width-mobile);
+
+    // action-btn
+    --action-btn-size: 4.0625rem;
+
+    // content
+    --content-title-font-size: 0.688rem;
+    --content-body-line-height: 1.38;
+    --content-divider-content: url("../../assets/images/pattern-divider-mobile.svg");
+    --content-divider-margin-block-start: 0.6875rem;
+    --content-margin-block-start: 2.7rem;
+    --content-margin-block-end: 3.5rem;
+    --content-body-margin-block-start: 1.45rem;
+    --content-body-text-transform: none;
+
+    @include media-breakpoint-min {
+        // fonts
+        --font-size-default: 29px;
+
+        // box
+        --box-border-radius: 1rem;
+        --box-margin-block-end: 4vh;
+        --box-min-width: var(--box-default-width-desktop);
+
+        // content
+        --content-title-font-size: 0.8765rem;
+        --content-body-line-height: 1.35;
+        --content-divider-content: url("../../assets/images/pattern-divider-desktop.svg");
+        --content-divider-margin-block-start: 1.3rem;
+        --content-margin-block-start: 3rem;
+        --content-margin-block-end: 3.8rem;
+        --content-body-margin-block-start: 1.3rem;
+        --content-body-text-transform: scale(0.95);
+    }
+}
+

@@ -1,0 +1,42 @@
+@use "sass:color";
+@use "variables" as *;
+@use "functions" as *;
+@mixin media-breakpoint-min($breakpoint: $media-breakpoint-default) {
+    @media screen and (width > get-breakpoint($breakpoint)) {
+        @content;
+    }
+}
+
+@mixin active-styles {
+
+    @media screen and (hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+
+    @media screen and (hover: none) {
+        &:active {
+            @content;
+        }
+    }
+
+}
+
+@mixin visually-hidden() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+    border: 0;
+}
+
+@mixin debug-container($width: 4px, $color: lime) {
+    outline: $width solid $color;
+    outline-offset: -$width;
+    background-color: color.change($color, $alpha: 0.2);
+}
